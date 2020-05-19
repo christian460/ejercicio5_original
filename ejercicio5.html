@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejercicio 5-Ajax</title>
+	</head>
+	<body>
+		google.charts.load('current', {'packages':['corechar']});
+		google.charts.setOnLoadCallback(drawChart);
+		
+		function documento(){
+			var xhr=new XMLHttpRequest();
+				xhr.onreadystatechange = function(){
+					if(this.readyState==4 && this.status==200){
+						var arreglo=[];
+						var data=[];
+						var confirmados;
+						var respuesta=JSON.parse(this.responseText);
+						for(var i=0;i<respuesta.length;++){
+							confirmados=respuesta[i].confirmed;
+							data=[respuesta[i]]
+						}
+		}
+	</body>
+</html>
